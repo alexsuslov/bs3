@@ -1,0 +1,21 @@
+{
+    "name": "bs3",
+    "version": "0.0.1",
+    "authors": [
+        "Александр Суслов <suslov@me.com>"
+    ],
+    "description": "Bootstrap 3 js environment",
+    "main": "js/index.js",
+    "keywords": [
+        "Bootstrap3",
+        "js"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "bs3",
+    "version": "0.0.1",
+    "authors": [
+        "Александр Суслов <suslov@me.com>"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-coffee": "~0.9.0",
+        "load-grunt-tasks": "~0.3.0",
+        "coffeelint": "~1.0.7",
+        "grunt-coffeelint": "0.0.8",
+        "grunt-contrib-connect": "~0.6.0",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-codo": "~0.1.0",
+        "grunt-contrib-yuidoc": "~0.5.0",
+        "grunt-contrib-uglify": "~0.3.2",
+        "grunt-contrib-compress": "^0.7.0",
+        "grunt-contrib-concat": "^0.3.0"
+    },
+    "dependencies": {
+        "grunt-bower-install": "^1.4.0"
+    }
+}

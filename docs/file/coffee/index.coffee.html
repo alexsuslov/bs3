@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>bs3-0.0.1</title>
+  <script src='../../javascript/application.js'></script>
+  <script src='../../javascript/search.js'></script>
+  <link rel='stylesheet' href='../../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>coffee</span>
+    &raquo;
+    <span class='title'>index.coffee</span>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        File:
+        index.coffee
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>coffee</td>
+        </tr>
+      </table>
+      <h2>Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#clean-'>
+        ~
+(String)
+<b>clean</b><span>(string)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Cleaning line from unnecessary 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#bs3-'>
+        ~
+(String)
+<b>bs3</b><span>(object)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Генератор элемента из json объекта Объект:
+<ul>
+<li>content
+--[String] строка для вставки в объект
+--[Array] массив строк для вставки в объект</li>
+<li>param [Объект] name=value
+...</li>
+</ul>
+
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#bs3.labelSelect-'>
+        ~
+(String)
+<b>bs3.labelSelect</b><span>(object)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Генератор группы элементов из json объекта <ul>
+<li>label</li>
+<li>select</li>
+<li>help-block
+@param  [Object]</li>
+</ul>
+
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#bs3.labelTextarea-'>
+        ~
+(String)
+<b>bs3.labelTextarea</b><span>(object)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Генератор группы элементов из json объекта <ul>
+<li>label</li>
+<li>textarea</li>
+<li>help-block
+@param  [Object]</li>
+</ul>
+
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#bs3.labelInput-'>
+        ~
+(String)
+<b>bs3.labelInput</b><span>(object)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Генератор группы элементов из json объекта <ul>
+<li>label</li>
+<li>input</li>
+<li>help-block</li>
+</ul><p>@param  [Object]</p>
+    </span>
+  </li>
+</ul>
+      <h2>Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='clean-'>
+      ~
+(String)
+<b>clean</b><span>(string)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Cleaning line from unnecessary</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>собрано</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>генератором </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (
+        <tt>String</tt>
+      )
+      &mdash;
+      <span class='desc'>очищенная строка </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='bs3-'>
+      ~
+(String)
+<b>bs3</b><span>(object)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Генератор элемента из json объекта
+Объект:</p><ul>
+<li>content
+--[String] строка для вставки в объект
+--[Array] массив строк для вставки в объект</li>
+<li>param [Объект] name=value
+...</li>
+</ul>
+
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>Объект</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (
+        <tt>String</tt>
+      )
+      &mdash;
+      <span class='desc'>html строка </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='bs3.labelSelect-'>
+      ~
+(String)
+<b>bs3.labelSelect</b><span>(object)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Генератор группы элементов из json объекта</p><ul>
+<li>label</li>
+<li>select</li>
+<li>help-block
+@param  [Object]</li>
+</ul>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (
+        <tt>String</tt>
+      )
+      &mdash;
+      <span class='desc'>html строка </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='bs3.labelTextarea-'>
+      ~
+(String)
+<b>bs3.labelTextarea</b><span>(object)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Генератор группы элементов из json объекта</p><ul>
+<li>label</li>
+<li>textarea</li>
+<li>help-block
+@param  [Object]</li>
+</ul>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (
+        <tt>String</tt>
+      )
+      &mdash;
+      <span class='desc'>html строка </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='bs3.labelInput-'>
+      ~
+(String)
+<b>bs3.labelInput</b><span>(object)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Генератор группы элементов из json объекта</p><ul>
+<li>label</li>
+<li>input</li>
+<li>help-block</li>
+</ul><p>@param  [Object]</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (
+        <tt>String</tt>
+      )
+      &mdash;
+      <span class='desc'>html строка </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  April 18, 14 10:00:38 by
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.0.8
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>
