@@ -2,7 +2,7 @@
 
 
 ## Install
-bower --save install 
+bower --save install https://github.com/alexsuslov/bs3.git
 
 
 ## Use
