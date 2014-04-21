@@ -110,22 +110,27 @@ Cleaning line from unnecessary
    */
 
   bs3.labelTextarea = function(object) {
-    var cls, label, spanInfo, textarea;
+    var label, param, spanInfo, textarea;
     label = this({
       "for": object.name,
       tag: 'label',
       content: object.label
     });
-    cls = 'form-control';
     if (object["class"]) {
-      cls += ' ' + object["class"];
+      object["class"] += ' form-control';
+    } else {
+      object["class"] = 'form-control';
     }
-    textarea = this({
+    textarea = {
       tag: 'textarea',
-      name: object.name,
-      "class": cls,
       content: object.value
-    });
+    };
+    for (param in object) {
+      if (param !== 'label' && param !== 'value') {
+        textarea[param] = object;
+      }
+    }
+    textarea = this(textarea);
     spanInfo = this({
       "class": "help-block",
       tag: 'span'

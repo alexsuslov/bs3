@@ -96,14 +96,20 @@ bs3.labelTextarea = (object)->
     tag: 'label'
     content: object.label
 
-  cls = 'form-control'
-  cls += ' ' + object.class if object.class
+  if object.class
+    object.class +=  ' form-control'
+  else
+    object.class = 'form-control'
 
-  textarea = @
+  textarea =
     tag:'textarea'
-    name: object.name
-    class: cls
     content: object.value
+
+  for param of object
+    unless param in ['label', 'value' ]
+      textarea[param] = object
+
+  textarea = @ textarea
 
   spanInfo = @
     class:"help-block"
