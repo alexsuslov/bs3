@@ -255,6 +255,8 @@
     return label + input + spanInfo;
   };
 
+  window.bs3 = bs3;
+
 }).call(this);
 
 //# sourceMappingURL=../js/bs3-tests.js.map

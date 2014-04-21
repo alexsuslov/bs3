@@ -143,3 +143,4 @@ bs3.labelInput = (object)->
 
   label + input + spanInfo
 
+window.bs3 = bs3

@@ -168,6 +168,8 @@ Cleaning line from unnecessary
     return label + input + spanInfo;
   };
 
+  window.bs3 = bs3;
+
 }).call(this);
 
 //# sourceMappingURL=../js/bs3-0.0.1.js.map
