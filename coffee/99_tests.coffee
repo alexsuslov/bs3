@@ -26,7 +26,8 @@ $ ->
       type: 'text'
       value: 'test value'
   testString = "<label for='test'>test label</label>\
-  <input class='form-control'><span class='help-block'></span>"
+  <input name='test' class='form-control'>\
+    <span class='help-block'></span>"
 
   if labelInput is testString
     console.log 'labelInput ok'
@@ -40,8 +41,11 @@ $ ->
       label: 'Textarea label'
       name: 'Textarea'
       value: 'Textarea value'
+      rows: "10"
+
   testString = "<label for='Textarea'>Textarea label</label>\
-  <textarea class='form-control'>Textarea value</textarea>\
+  <textarea name='Textarea' rows='10' \
+  class='form-control'>Textarea value</textarea>\
     <span class='help-block'></span>"
   if labelTextarea is testString
     console.log 'labelTextarea ok'
@@ -61,10 +65,9 @@ $ ->
         value:'sel val3'
       ]
   testString = "<label for='Select'>Select label</label>\
-  <select class='form-control'>\
+  <select name='Select' class='form-control'>\
     <option value='sel val1'>sel name1</option>\
-    <option value='sel val3'>sel name2</option>\
-    </select>\
+    <option value='sel val3'>sel name2</option></select>\
     <span class='help-block'></span>"
 
   if labelSelect is testString

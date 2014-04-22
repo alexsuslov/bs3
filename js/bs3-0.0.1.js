@@ -30,7 +30,7 @@ Cleaning line from unnecessary
    */
 
   bs3 = function(object) {
-    var closeTag, comma, content, param, params, value, _ref;
+    var closeTag, comma, content, param, params, _ref;
     this.clean = clean;
     if (Object.prototype.toString.call(object.content) === '[object Array]') {
       content = object.content.join('');
@@ -41,8 +41,7 @@ Cleaning line from unnecessary
     comma = '';
     for (param in object) {
       if (param !== 'content' && param !== 'tag' && param !== 'options') {
-        value = object[param];
-        params = "" + comma + param + "='" + value + "'";
+        params += "" + comma + param + "='" + object[param] + "'";
         comma = ' ';
       }
     }
@@ -89,6 +88,7 @@ Cleaning line from unnecessary
     }
     select = this({
       tag: 'select',
+      name: object.name,
       "class": cls,
       content: options
     });
@@ -116,19 +116,19 @@ Cleaning line from unnecessary
       tag: 'label',
       content: object.label
     });
-    if (object["class"]) {
-      object["class"] += ' form-control';
-    } else {
-      object["class"] = 'form-control';
-    }
     textarea = {
       tag: 'textarea',
       content: object.value
     };
     for (param in object) {
       if (param !== 'label' && param !== 'value') {
-        textarea[param] = object;
+        textarea[param] = object[param];
       }
+    }
+    if (textarea["class"]) {
+      textarea["class"] = object["class"] + ' form-control';
+    } else {
+      textarea["class"] = 'form-control';
     }
     textarea = this(textarea);
     spanInfo = this({

@@ -27,7 +27,7 @@
       type: 'text',
       value: 'test value'
     });
-    testString = "<label for='test'>test label</label><input class='form-control'><span class='help-block'></span>";
+    testString = "<label for='test'>test label</label><input name='test' class='form-control'><span class='help-block'></span>";
     if (labelInput === testString) {
       console.log('labelInput ok');
     } else {
@@ -37,9 +37,10 @@
     labelTextarea = bs3.labelTextarea({
       label: 'Textarea label',
       name: 'Textarea',
-      value: 'Textarea value'
+      value: 'Textarea value',
+      rows: "10"
     });
-    testString = "<label for='Textarea'>Textarea label</label><textarea class='form-control'>Textarea value</textarea><span class='help-block'></span>";
+    testString = "<label for='Textarea'>Textarea label</label><textarea name='Textarea' rows='10' class='form-control'>Textarea value</textarea><span class='help-block'></span>";
     if (labelTextarea === testString) {
       console.log('labelTextarea ok');
     } else {
@@ -59,7 +60,7 @@
         }
       ]
     });
-    testString = "<label for='Select'>Select label</label><select class='form-control'><option value='sel val1'>sel name1</option><option value='sel val3'>sel name2</option></select><span class='help-block'></span>";
+    testString = "<label for='Select'>Select label</label><select name='Select' class='form-control'><option value='sel val1'>sel name1</option><option value='sel val3'>sel name2</option></select><span class='help-block'></span>";
     if (labelSelect === testString) {
       console.log('labelSelect ok');
     } else {
@@ -117,7 +118,7 @@
    */
 
   bs3 = function(object) {
-    var closeTag, comma, content, param, params, value, _ref;
+    var closeTag, comma, content, param, params, _ref;
     this.clean = clean;
     if (Object.prototype.toString.call(object.content) === '[object Array]') {
       content = object.content.join('');
@@ -128,8 +129,7 @@
     comma = '';
     for (param in object) {
       if (param !== 'content' && param !== 'tag' && param !== 'options') {
-        value = object[param];
-        params = "" + comma + param + "='" + value + "'";
+        params += "" + comma + param + "='" + object[param] + "'";
         comma = ' ';
       }
     }
@@ -176,6 +176,7 @@
     }
     select = this({
       tag: 'select',
+      name: object.name,
       "class": cls,
       content: options
     });
@@ -203,19 +204,19 @@
       tag: 'label',
       content: object.label
     });
-    if (object["class"]) {
-      object["class"] += ' form-control';
-    } else {
-      object["class"] = 'form-control';
-    }
     textarea = {
       tag: 'textarea',
       content: object.value
     };
     for (param in object) {
       if (param !== 'label' && param !== 'value') {
-        textarea[param] = object;
+        textarea[param] = object[param];
       }
+    }
+    if (textarea["class"]) {
+      textarea["class"] = object["class"] + ' form-control';
+    } else {
+      textarea["class"] = 'form-control';
     }
     textarea = this(textarea);
     spanInfo = this({

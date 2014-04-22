@@ -33,8 +33,7 @@ bs3 = (object)->
   comma = ''
   for param of object
     unless param in ['content','tag', 'options']
-      value = object[param]
-      params = "#{comma}#{param}='#{value}'"
+      params += "#{comma}#{param}='#{object[param]}'"
       comma = ' '
   # tag
   object.tag = 'div' unless object.tag
@@ -72,6 +71,7 @@ bs3.labelSelect = (object)->
 
   select = @
     tag:'select'
+    name:object.name
     class: cls
     content: options
 
@@ -96,18 +96,18 @@ bs3.labelTextarea = (object)->
     tag: 'label'
     content: object.label
 
-  if object.class
-    object.class +=  ' form-control'
-  else
-    object.class = 'form-control'
-
   textarea =
     tag:'textarea'
     content: object.value
 
   for param of object
     unless param in ['label', 'value' ]
-      textarea[param] = object
+      textarea[param] = object[param]
+
+  if textarea.class
+    textarea.class =  object.class + ' form-control'
+  else
+    textarea.class = 'form-control'
 
   textarea = @ textarea
 
