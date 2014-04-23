@@ -149,4 +149,116 @@ bs3.labelInput = (object)->
 
   label + input + spanInfo
 
+###
+ _                _                _        _
+| |__   ___  _ __(_)_______  _ __ | |_ __ _| |
+| '_ \ / _ \| '__| |_  / _ \| '_ \| __/ _` | |
+| | | | (_) | |  | |/ / (_) | | | | || (_| | |
+|_| |_|\___/|_|  |_/___\___/|_| |_|\__\__,_|_|
+###
+###
+Генератор группы элементов из json объекта
+- label
+- select
+- help-block
+@param  [Object]
+@return [String] html строка
+###
+
+bs3.horizontalLabelSelect = (object)->
+  label = @
+    for: object.name
+    tag: 'label'
+    class:'col-sm-2 control-label'
+    content: object.label
+
+  options = ''
+  for option in object.options
+    options += @
+      tag: 'option'
+      content: option.name
+      value: option.value
+
+  cls = 'form-control'
+  cls += ' ' + object.class if object.class
+
+  select = @ class:'col-sm-10', content: @
+    tag:'select'
+    name:object.name
+    class: cls
+    content: options
+
+  spanInfo = @
+    class:"help-block col-sm-12"
+    tag:'span'
+
+  @ class:'form-group', content: label + select + spanInfo
+
+###
+Генератор группы элементов из json объекта
+- label
+- textarea
+- help-block
+@param  [Object]
+@return [String] html строка
+###
+bs3.horizontalLabelTextarea = (object)->
+  label = @
+    for: object.name
+    tag: 'label'
+    class:'col-sm-2 control-label'
+    content: object.label
+
+  textarea =
+    tag:'textarea'
+    content: object.value
+
+  for param of object
+    unless param in ['label', 'value' ]
+      textarea[param] = object[param]
+
+  if textarea.class
+    textarea.class =  object.class + ' form-control'
+  else
+    textarea.class = 'form-control'
+
+  textarea = @ class:'col-sm-10', content: @ textarea
+
+  spanInfo = @
+    class:"help-block col-sm-12"
+    tag:'span'
+
+  @ class:'form-group', content: label + textarea + spanInfo
+###
+Генератор группы элементов из json объекта
+- label
+- input
+- help-block
+
+@param  [Object]
+@return [String] html строка
+###
+
+bs3.horizontalLabelInput = (object)->
+  label = @
+    for: object.name
+    tag: 'label'
+    class:'col-sm-2 control-label'
+    content: object.label
+
+  cls = 'form-control'
+  cls += ' ' + object.class if object.class
+
+  input = @ class:'col-sm-10', content: @
+    tag:'input'
+    name: object.name
+    class: cls
+    content: object.content
+
+  spanInfo = @
+    class:"help-block col-sm-12"
+    tag:'span'
+
+  @ class:'form-group', content:label + input + spanInfo
+
 window.bs3 = bs3
